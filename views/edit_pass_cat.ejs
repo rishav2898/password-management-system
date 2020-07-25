@@ -1,0 +1,40 @@
+<%- include('header')%>
+  
+  	<div class="container">
+      <div class="row">
+        <h2 class="text-center"><%= title %></h2>
+        <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="panel-title"> Edit Password Category </div>
+            </div>
+            <div class="panel-body">
+              <form action="/PasswordCategory/edit/" id="addNewCategory" class="form-horizontal" method="post" role="form">
+                <input type="hidden" name="id" value="<%= id %>">
+                <div class="form-group">
+                  <% if(errors != '') {%>
+                      <p style="text-align:centre; color:red;"> <%= errors %></p>
+                  <% } %>
+                  <% if(Success != '') {%>
+                      <p style="text-align:centre; color:green;"> <%= Success %></p>
+                  <% } %>
+                  <label for="categoryName" class="col-md-3 control-label"> Category Name </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" name="passwordCategory" value="<%= records.password_category %>" placeholder="Enter your category Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-offset-3 col-md-9">
+                    <input type="submit" class="btn btn-primary" name="Update Category" value="Update Category" >
+                  </div>
+                </div>
+                <p><a href="/passwordCategory"> View All Category List </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+  </body>
+</html>
